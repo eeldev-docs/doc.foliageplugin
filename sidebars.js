@@ -32,8 +32,9 @@ const sidebars = {
       id: 'faq'
     },
     {
-      type: 'doc',
-      id: 'changelog'
+      type: 'link',
+      label: 'Changelog',
+      href: 'https://eeldev.com/index.php/category/unreal-engine/foliage-plugin/',
     },
     /*
     {
