@@ -19,11 +19,20 @@ In **Project Settings → Game → Foliage Plugin → Saving and Loading**:
 
 ## When data is loaded and saved
 - The save is **loaded** on the server when the Foliage Manager is spawned, that is when the first foliage component starts in a world.
-- The data is **saved** every **Auto Saving Rate** seconds.
-- To save right away, for example before quitting, call **Save Foliage Data to Disk** on the Foliage Manager. Use **Get Actor of Class** with **FoliagePluginManager** to find it.
+- Every **Auto Saving Rate** seconds, the data is **saved** if something changed since the last save. If nothing changed, nothing is written.
+- Automatic and manual saves are written to disk on a background thread, so the game does not stall. The data is captured when the save starts.
+- When the Foliage Manager ends play, for example when the game quits or travels to another map, unsaved changes are saved right away. This save waits until it is written.
+- To save right away, call **Save Foliage Data to Disk** on the Foliage Manager. Use **Get Actor of Class** with **FoliagePluginManager** to find it. It always saves, even if nothing changed.
 
-:::warning Save before quitting
-Changes since the last automatic save are lost if the game is closed without saving. Call **Save Foliage Data to Disk** before you quit or travel to another map.
+| Function | Description |
+|---|---|
+| **Is Foliage Data Dirty** | True if something changed since the last save. |
+| **Is Saving Foliage Data** | True while a background save is being written. |
+| **Mark Foliage Data Dirty** | Makes the next automatic save write the data. Server only. Available in a [Custom Foliage Manager](/docfiles/guides/custom-foliage-manager). |
+| **Is Saving Synchronously** | True during the save made when the manager ends play. Available in a Custom Foliage Manager. |
+
+:::note
+**Save Foliage Data to Disk** returns true when the background save has started. The result is shown as a debug message and logged when the write is done. If a save fails, the data stays dirty and is saved again on the next automatic save.
 :::
 
 ## What is saved
