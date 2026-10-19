@@ -1,0 +1,71 @@
+---
+sidebar_position: 1
+description: Integrate the Foliage Plugin with the Survival Game Kit v1.
+---
+
+# Survival Game Kit v1
+
+:::caution Outdated
+This tutorial was made for an older version of the Survival Game Kit and may need changes for newer versions.
+:::
+
+import ReactPlayer from 'react-player'
+
+## Video demonstration
+<ReactPlayer url='https://www.youtube.com/watch?v=jcDR2N0pMD4' />
+
+## Step 1: Create the Data Table
+Create a Data Table with **FoliageData** as the row structure.
+
+![Create the Data Table](../../../static/img/legacy/2_datatable.gif)
+
+## Step 2: Create the Foliage Actor
+Create a Blueprint class with **FoliagePluginActor** as the parent class.
+
+![Create the Foliage Actor](../../../static/img/legacy/3_foliageactor.gif)
+
+## Step 3: Assign the Data Table in the Project Settings
+Set **Foliage Data Table** in **Project Settings → Game → Foliage Plugin**. The Foliage Actor is set per resource in the Data Table, not here.
+
+![Assign the Data Table](../../../static/img/legacy/4_assign_data-1024x694-2.png)
+
+## Step 4: Change the component class
+Set **Component Class** to **FoliagePluginComponent** on your foliage types.
+
+![Change the component class](../../../static/img/legacy/change_foliage_plugin_comp-1024x710.png)
+
+## Step 5: Add a tree resource
+Add a tree to the Data Table:
+
+![Tree resource](../../../static/img/legacy/5_data_table_tree-1024x728.png)
+
+Set **Foliage Actor Class** to the Foliage Actor from Step 2:
+
+![Set the Foliage Actor Class](../../../static/img/legacy/foliageactor-1024x598.png)
+
+## Step 6: Add a rock resource
+
+![Rock resource](../../../static/img/legacy/6_data_table_rock-1024x729.png)
+
+## Step 7: Implement the interface on the character
+In **BP_SurvivalCharacter**, add the **Foliage Plugin Interface**.
+
+![Add the interface to BP_SurvivalCharacter](../../../static/img/legacy/7_character_interface-1024x724.png)
+
+Add the harvested resources to the inventory:
+
+![Add the rewards to the inventory](../../../static/img/legacy/9_character_add_inventory-1024x296.png)
+
+## Step 8: Harvest with melee weapons
+Open **BP_MasterMeleeWeapon** (`/Blueprints/Holdables/BP_MasterMeleeWeapon`) and change the **Give Damage Once** function as below:
+
+![Give Damage Once](../../../static/img/legacy/10_masterweapon-1024x610.png)
+
+## Step 9: Harvest with the interact key
+Open **BP_PlayerInventoryComponent** (`/Blueprints/Components`) and change the **Is inventory actor?** macro:
+
+![Is inventory actor? macro](../../../static/img/legacy/11_interact-1024x575.png)
+
+Then change the **Is Interactable?** macro:
+
+![Is Interactable? macro](../../../static/img/legacy/12_is_interactable-1024x606.png)
