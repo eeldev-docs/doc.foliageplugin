@@ -28,7 +28,8 @@ The screenshot is from an older version. **Enable Replication** no longer exists
 | **Block Foliage Despawn Radius** | `1000` | A Foliage Actor is not destroyed while an object of a blocked type is within this radius. |
 | **Block Foliage Respawn Radius** | `1000` | An instance does not respawn while an object of a blocked type is within this radius. |
 | **Blocked Respawn Object Types** | Pawn | Object types that block both despawning and respawning. Leave empty to never block. |
-| **Field System Actor** | `FS_MasterField` | Unreal Engine 5 only. The Field System Actor spawned to break [Geometry Collections](/docfiles/guides/destructible-meshes). |
+| **Field System Actor** | `FS_MasterField` | The Field System Actor spawned to break [Geometry Collections](/docfiles/guides/destructible-meshes). |
+| **Field System Actor Life Span** | `2` | Seconds a spawned Field System Actor stays before it is destroyed. Minimum 0.1. |
 
 ## Saving and Loading
 | Setting | Default | Description |

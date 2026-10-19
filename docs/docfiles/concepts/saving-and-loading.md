@@ -31,8 +31,10 @@ For every hidden or removed instance, the plugin saves which foliage component i
 
 The respawn timers are not saved. After loading, hidden instances respawn according to the normal [respawn rules](/docfiles/concepts/lifecycle#5-the-instance-respawns).
 
-:::warning Editing foliage after release
-Saved instances are identified by their index in the foliage component. Painting or erasing foliage in a level changes those indices, so an old save can hide the wrong instances. Increase **Save Game Version** whenever you ship a level with changed foliage.
+:::info Editing foliage after release
+Painting or erasing foliage in a level changes the instance indices. When a component starts, the plugin checks every saved instance against its original location. If the index has changed, the instance is found again by its location. If no instance is left at that location, the saved entry is dropped and a warning is logged.
+
+Instances that you moved in the editor cannot be found again. Increase **Save Game Version** if you move a lot of foliage in a released level.
 :::
 
 ## Per-player or per-world save names

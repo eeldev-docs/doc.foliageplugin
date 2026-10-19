@@ -19,7 +19,7 @@ The screenshot is from an older version. **Foliage Actor Class** has since been 
 | **Resource Name** | | A display name for the resource, for example *Tree*. |
 | **Rewards on Harvest** | | The rewards given on each harvest. Each reward has a **Reward Name** and a **Number of Rewards** with **Min** and **Max**. You pick the actual amount when you receive the reward, see [Harvesting Foliage](/docfiles/getting_started/harvesting#step-2-add-the-rewards-to-your-inventory). |
 | **Foliage Meshes** | | The static meshes that belong to this resource. A foliage instance uses this row when its mesh is in this list. A mesh should only be in one row. |
-| **Destructible Meshes** | | Optional destructible versions of the meshes, at the **same index** as in **Foliage Meshes**. Geometry Collections in UE5, Destructible Meshes in UE4. See [Destructible Meshes](/docfiles/guides/destructible-meshes). |
+| **Destructible Meshes** | | Optional destructible versions of the meshes, at the **same index** as in **Foliage Meshes**. Use Geometry Collections. See [Destructible Meshes](/docfiles/guides/destructible-meshes). |
 | **Foliage Actor Class** | None | The Foliage Actor spawned when an instance takes damage. **Required.** |
 | **Max Uses** | `3` | How many times the resource can be harvested before it is depleted. |
 | **Foliage Actor Max Life Time** | `120` | Seconds before a Foliage Actor that was not depleted is destroyed. Extended while a player is nearby. |

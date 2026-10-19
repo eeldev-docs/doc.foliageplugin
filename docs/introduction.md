@@ -23,7 +23,7 @@ You keep using Unreal Engine's normal foliage workflow. You only change the foli
 - **Respawning and removing** instances, with blocking checks so foliage never pops up in front of a player. See [Lifecycle of a Foliage Instance](/docfiles/concepts/lifecycle).
 - **Saving and loading** of every modified instance between sessions. See [Saving and Loading](/docfiles/concepts/saving-and-loading).
 - **Full replication** on listen and dedicated servers, including players who join later. See [Multiplayer](/docfiles/concepts/multiplayer).
-- **Destructible meshes**: Chaos Geometry Collections in Unreal Engine 5, Apex Destructible Meshes in Unreal Engine 4. See [Destructible Meshes](/docfiles/guides/destructible-meshes).
+- **Destructible meshes** with Chaos Geometry Collections. See [Destructible Meshes](/docfiles/guides/destructible-meshes).
 - **Physics on depletion**, for example trees that fall over. See [Simulating Physics](/docfiles/guides/simulating-physics).
 - **Blueprint overridable** damage, reward and depletion logic. See [Foliage Actor](/docfiles/reference/foliage-actor).
 - Works with **level streaming**, World Composition and tiled landscapes.

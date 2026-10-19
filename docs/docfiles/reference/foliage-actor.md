@@ -17,7 +17,7 @@ Its events and functions are listed under **Override** in the **My Blueprint** p
 | **Root** | Scene root. |
 | **Foliage Mesh** | Static mesh component. The plugin sets it to the instance's mesh. |
 
-Add a **Geometry Collection Component** (UE5) or **Destructible Component** (UE4) yourself if you use [destructible meshes](/docfiles/guides/destructible-meshes).
+Add a **Geometry Collection Component** yourself if you use [destructible meshes](/docfiles/guides/destructible-meshes).
 
 ## Events
 | Event | Runs on | Called when |

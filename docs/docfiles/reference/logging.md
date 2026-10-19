@@ -38,9 +38,10 @@ With **Enable Debugging** on in the [Plugin Settings](/docfiles/reference/plugin
 | *Foliage Actor class is invalid! Check your data table settings!* | The row has no **Foliage Actor Class**. |
 | *On Point Damage: Failed spawning a Foliage Actor!* | The Foliage Actor could not be spawned. |
 | *Foliage successfully harvested, but Instigator or DamageCauser does not implement the FoliageInterface!* | Nothing received the reward. See [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface). |
-| *Found a Destructible Mesh but no Geometry Collection Component found on (X)* | The row has a destructible mesh, but the Foliage Actor has no Geometry Collection Component (UE5) or Destructible Component (UE4). |
+| *Found a Destructible Mesh but no Geometry Collection Component found on (X)* | The row has a destructible mesh, but the Foliage Actor has no Geometry Collection Component. |
 | *Saved Foliage Component Data to Disk* / *Saving Foliage Component Data Failed!* | Result of an automatic or manual save. |
 | *Loaded foliage data from disk* / *Failed loading foliage data from disk* | Result of loading the save when the game starts. |
+| *Foliage component (X) changed since the data was saved: remapped (N) and dropped (M) instances* | The foliage in a level was edited after the data was saved. See [Saving and Loading](/docfiles/concepts/saving-and-loading#what-is-saved). |
 
 ## Finding the log file
 Log files are written to your project's `Saved/Logs` folder.
