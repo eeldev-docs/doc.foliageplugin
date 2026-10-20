@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Lifecycle of a Foliage Instance | Foliage Plugin Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://foliageplugin.eeldev.com/docfiles/concepts/lifecycle"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Lifecycle of a Foliage Instance | Foliage Plugin Documentation"><meta data-rh="true" name="description" content="What happens to a foliage instance from the first hit until it respawns, including uses, lifetimes and blocking checks."><meta data-rh="true" property="og:description" content="What happens to a foliage instance from the first hit until it respawns, including uses, lifetimes and blocking checks."><link data-rh="true" rel="icon" href="/img/eeldev_icon.png"><link data-rh="true" rel="canonical" href="https://foliageplugin.eeldev.com/docfiles/concepts/lifecycle"><link data-rh="true" rel="alternate" href="https://foliageplugin.eeldev.com/docfiles/concepts/lifecycle" hreflang="en"><link data-rh="true" rel="alternate" href="https://foliageplugin.eeldev.com/docfiles/concepts/lifecycle" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.8f7f9d17.css">
-<script src="/assets/js/runtime~main.3d41f618.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.04b65f46.js" defer="defer"></script>
 <script src="/assets/js/main.5584b0b8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -20,7 +20,7 @@
 <li>Hides the instance by moving it down by <strong>Hidden Foliage Move Distance</strong>.</li>
 </ol>
 <h2 class="anchor anchorWithStickyNavbar_FNw8" id="2-the-foliage-actor-is-harvested">2. The Foliage Actor is harvested<a href="#2-the-foliage-actor-is-harvested" class="hash-link" aria-label="Direct link to 2. The Foliage Actor is harvested" title="Direct link to 2. The Foliage Actor is harvested">​</a></h2>
-<p>Each hit on the Foliage Actor with more than 0 damage:</p>
+<p>Each point or radial damage hit on the Foliage Actor with more than 0 damage:</p>
 <ol>
 <li>Sends the row&#x27;s <strong>Rewards on Harvest</strong> to the player with <strong>On Foliage Harvested</strong>. See <a href="/docfiles/reference/foliage-plugin-interface">Foliage Plugin Interface</a>.</li>
 <li>Reduces <strong>Remaining Uses</strong> by 1 and calls <strong>BPE On Foliage Damaged</strong>.</li>
