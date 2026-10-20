@@ -20,7 +20,8 @@ The [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface) eve
 | What | How |
 |---|---|
 | Hidden and removed instances | Sent to every client when they change. |
-| Instances changed before a player joined | Sent to the player in chunks once their world has loaded. |
+| Instances changed before a player joined | Sent to the player in chunks once their world has loaded. Changes made while the chunks are being sent follow right after, so the player ends up with the same state as the server. |
+| Players already connected when the manager spawns, or after seamless travel | Get the same initial sync as a player who just joined. |
 | Foliage Actors | Normal replicated Actors. Mesh, remaining uses and depletion are replicated. |
 | Physics movement of depleted actors | Only when **Replicate Physics Movement** is on. See below. |
 

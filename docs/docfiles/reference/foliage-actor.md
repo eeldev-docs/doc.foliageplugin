@@ -45,6 +45,7 @@ The same events are also available as the bindable delegates **On Foliage Remain
 | **Foliage Get Data** | Returns the actor's row from the Data Table. |
 | **Foliage Get Remaining Uses** | Returns the remaining uses. |
 | **Foliage Get Reward** | Returns **Rewards on Harvest** from the row. |
+| **Get Geometry Collection Actor** | Returns the actor that shows the [destructible mesh](/docfiles/guides/destructible-meshes), or none if the mesh has no destructible version. |
 | **Reduce Remaining Uses** | Reduces the remaining uses. Server only. |
 | **Add Remaining Uses** | Adds remaining uses. Server only. |
 | **Set Remaining Uses** | Sets the remaining uses. Server only. |

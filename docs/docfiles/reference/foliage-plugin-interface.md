@@ -23,9 +23,9 @@ Both events run on the **server**.
 ## Error types
 | Error | Sent when |
 |---|---|
-| **Wrong Damage Type** | **Require Damage Type** is on and the hit used a damage type that is not in **Valid Damage Types**, or did less than **Damage Amount**. See [Damage Types](/docfiles/guides/damage-types). |
+| **Wrong Damage Type** | **Require Damage Type** is on and the hit used a damage type that is not in **Valid Damage Types**. See [Damage Types](/docfiles/guides/damage-types). |
+| **Not Enough Damage** | **Require Damage Type** is on and the hit did less than **Damage Amount**. |
 | **No Uses Left** | The Foliage Actor is already depleted. |
-| **Not Enough Damage** | Reserved, not sent by the plugin. Too little damage is reported as **Wrong Damage Type**. |
 
 ## If nothing receives the reward
 If neither the Instigator nor the Damage Causer implements the interface, the foliage is still harvested, and with **Enable Debugging** on you see:

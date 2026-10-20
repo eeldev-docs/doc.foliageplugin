@@ -34,6 +34,11 @@ When **Require Damage Type** is on, a hit counts only if:
 
 If **Valid Damage Types** is empty, only the damage amount is checked.
 
-A hit that fails the check does nothing, and **On Foliage Error Message** is sent with **Wrong Damage Type** to the Instigator and the Damage Causer. Use it to show a message such as *"You need an axe"*. See [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface).
+A hit that fails the check does nothing, and **On Foliage Error Message** is sent to the Instigator and the Damage Causer:
+
+- **Wrong Damage Type** if the damage type is not in **Valid Damage Types**. Use it to show a message such as *"You need an axe"*.
+- **Not Enough Damage** if the damage type is valid but the damage is less than **Damage Amount**.
+
+ See [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface).
 
 When **Require Damage Type** is off, any damage above 0 harvests the resource.

@@ -30,6 +30,21 @@ Open your Foliage Actor Blueprint and add a **Geometry Collection Component**. T
 
 ![A destructible rock being harvested](../../../static/img/legacy/91b17edfc99451e38242bf57ec2ca0fb.gif)
 
+## Geometry Collection Actor
+The destructible mesh is shown by a separate **Foliage Plugin Geometry Collection Actor** that is spawned on the server and on every client. The Foliage Actor's own mesh is hidden while it is shown. Point damage on it is passed on to the Foliage Actor, so a hit counts just like a hit on the Foliage Actor.
+
+You can read the resource from it:
+
+| Function | Returns |
+|---|---|
+| **Get Foliage Actor** | The Foliage Actor it belongs to. |
+| **Foliage Get Data** | The resource's row from the Data Table. It is copied, so it is still there after the Foliage Actor is destroyed. |
+| **Foliage Get Mesh Index** | The index of the mesh in **Foliage Meshes**. |
+
+To add your own logic, create a Blueprint with **Foliage Plugin Geometry Collection Actor** as the parent class and set it as **Geometry Collection Actor Class** in the [Plugin Settings](/docfiles/reference/plugin-settings). The Foliage Actor and the data are set before **Begin Play**. From the Foliage Actor, use **Get Geometry Collection Actor** to find it.
+
+The Geometry Collection Actor is destroyed together with the Foliage Actor.
+
 ## Field System Actor
 The Geometry Collection is broken by spawning a **Field System Actor** at the hit location. The default is the engine's `FS_MasterField`. You can choose another one with **Field System Actor** in the [Plugin Settings](/docfiles/reference/plugin-settings).
 

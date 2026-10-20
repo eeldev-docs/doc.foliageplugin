@@ -30,6 +30,7 @@ The screenshot is from an older version. **Enable Replication** no longer exists
 | **Blocked Respawn Object Types** | Pawn | Object types that block both despawning and respawning. Leave empty to never block. |
 | **Field System Actor** | `FS_MasterField` | The Field System Actor spawned to break [Geometry Collections](/docfiles/guides/destructible-meshes). |
 | **Field System Actor Life Span** | `2` | Seconds a spawned Field System Actor stays before it is destroyed. Minimum 0.1. |
+| **Geometry Collection Actor Class** | `FoliagePluginGeometryCollectionActor` | The actor spawned to show a [destructible mesh](/docfiles/guides/destructible-meshes). Set your own child class here. |
 
 ## Saving and Loading
 | Setting | Default | Description |
