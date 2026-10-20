@@ -31,7 +31,7 @@ Open your Foliage Actor Blueprint and add a **Geometry Collection Component**. T
 ![A destructible rock being harvested](../../../static/img/legacy/91b17edfc99451e38242bf57ec2ca0fb.gif)
 
 ## Geometry Collection Actor
-The destructible mesh is shown by a separate **Foliage Plugin Geometry Collection Actor** that is spawned on the server and on every client. The Foliage Actor's own mesh is hidden while it is shown. Point damage on it is passed on to the Foliage Actor, so a hit counts just like a hit on the Foliage Actor.
+The destructible mesh is shown by a separate **Foliage Plugin Geometry Collection Actor** that is spawned on the server and on every client. It uses the Foliage Actor's location, rotation and scale, and the Foliage Actor's own mesh is hidden while it is shown. Point and radial damage on it is passed on to the Foliage Actor, so a hit counts just like a hit on the Foliage Actor.
 
 You can read the resource from it:
 

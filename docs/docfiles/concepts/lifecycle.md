@@ -24,7 +24,7 @@ When a foliage instance that uses the **FoliagePluginComponent** takes point or 
 5. Hides the instance by moving it down by **Hidden Foliage Move Distance**.
 
 ## 2. The Foliage Actor is harvested
-Each hit on the Foliage Actor with more than 0 damage:
+Each point or radial damage hit on the Foliage Actor with more than 0 damage:
 
 1. Sends the row's **Rewards on Harvest** to the player with **On Foliage Harvested**. See [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface).
 2. Reduces **Remaining Uses** by 1 and calls **BPE On Foliage Damaged**.
