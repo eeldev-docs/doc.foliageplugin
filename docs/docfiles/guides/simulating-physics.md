@@ -28,4 +28,4 @@ In the resource's row in the [Foliage Data Table](/docfiles/reference/data-table
 - **Players are pushed by falling trees.** Set **Physics Collision Profile Name** to a profile that ignores Pawns.
 - **Positions differ between players.** See [Physics movement](/docfiles/concepts/multiplayer#physics-movement).
 
-To push the mesh in your own way, override **Handle Foliage Impulse on Depletion** in your Foliage Actor. See [Foliage Actor](/docfiles/reference/foliage-actor).
+To push the mesh in your own way, override **Handle Foliage Impulse on Depletion** in your Foliage Actor. See [Falling Away from the Player](/docfiles/guides/falling-direction).

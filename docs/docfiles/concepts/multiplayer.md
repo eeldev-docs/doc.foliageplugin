@@ -38,7 +38,7 @@ The **Foliage Manager** that keeps track of the instances is spawned automatical
 | BPE On Foliage Depleted | ✓ | ✓ |
 | On Foliage Harvested / On Foliage Error Message | ✓ | |
 
-Play effects and sounds from the replicated events, and gameplay logic from the server-only ones.
+Play effects and sounds from the replicated events, and gameplay logic from the server-only ones. See [Effects and Sounds](/docfiles/guides/effects-and-sounds).
 
 ## Physics movement
 **Replicate Physics Movement** in the [Plugin Settings](/docfiles/reference/plugin-settings) is off by default to save bandwidth. Each machine then simulates a falling tree on its own, so the end positions can differ slightly. Turn it on only if the position of depleted actors matters for gameplay.
