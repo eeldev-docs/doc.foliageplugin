@@ -14,6 +14,8 @@ Foliage instances and Foliage Actors only react to damage on the server. Damage 
 Client: Input → Server RPC "Harvest"  →  Server: Line Trace → Apply Point Damage
 ```
 
+See [Multiplayer Harvesting](/docfiles/guides/multiplayer-harvesting) for the Blueprint.
+
 The [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface) events also run on the server.
 
 ## What is replicated

@@ -40,7 +40,7 @@ Apply **point damage** or **radial damage** to the foliage, on the server. This 
 The plugin handles the rest. The first hit replaces the instance with your Foliage Actor and applies the same damage to it, so the first hit already counts as a harvest.
 
 :::warning Damage must be applied on the server
-Damage applied on a client is ignored. In multiplayer, send a Server RPC from the client and apply the damage there. See [Multiplayer](/docfiles/concepts/multiplayer).
+Damage applied on a client is ignored. In multiplayer, send a Server RPC from the client and apply the damage there. See [Multiplayer Harvesting](/docfiles/guides/multiplayer-harvesting).
 :::
 
 ## Next steps

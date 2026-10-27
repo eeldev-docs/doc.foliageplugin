@@ -36,14 +36,23 @@ In **Project Settings → Game → Foliage Plugin → Saving and Loading**:
 :::
 
 ## What is saved
-For every hidden or removed instance, the plugin saves which foliage component it belongs to and its instance index, together with its original and hidden transform.
+For every hidden or removed instance, the plugin saves which foliage component it belongs to, its instance index and its mesh, together with its original and hidden transform.
 
 The respawn timers are not saved. After loading, hidden instances respawn according to the normal [respawn rules](/docfiles/concepts/lifecycle#5-the-instance-respawns).
 
 :::info Editing foliage after release
-Painting or erasing foliage in a level changes the instance indices. When a component starts, the plugin checks every saved instance against its original location. If the index has changed, the instance is found again by its location. If no instance is left at that location, the saved entry is dropped and a warning is logged.
+When a component starts, the plugin finds every saved instance again by its mesh and original location. This means saved data still works when:
+
+- Foliage is painted or erased in the level, which changes the instance indices.
+- A component is replaced by a new one, for example when PCG generates again or foliage ends up in another World Partition cell.
+
+If no instance of the same mesh is left at that location in the component the entry belongs to, the saved entry is dropped and a warning is logged.
 
 Instances that you moved in the editor cannot be found again. Increase **Save Game Version** if you move a lot of foliage in a released level.
+:::
+
+:::note Saves from version 2.0
+Saves from 2.0 do not include the mesh. These entries are still found by component and instance index, and get the mesh the first time their component starts.
 :::
 
 ## Per-player or per-world save names

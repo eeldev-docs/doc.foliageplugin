@@ -35,6 +35,8 @@ Open the foliage type of every mesh you want to interact with, and set **Compone
 Instances that use the default component class are ignored by the plugin.
 :::
 
+To harvest instances spawned by PCG or added to your own Actor, see [PCG and Instanced Static Meshes](/docfiles/guides/pcg-and-instanced-meshes).
+
 ## Step 5: Configure collision
 The foliage must block the trace or projectile you use to apply damage. This example uses **BlockAll**. In a real project you will probably want your own collision profile.
 
