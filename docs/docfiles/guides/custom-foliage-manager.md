@@ -15,7 +15,7 @@ Create a Blueprint class with **FoliagePluginManager** as the parent class, and 
 ## Step 2: Override the functions you need
 | Function | Use it to |
 |---|---|
-| **Get Save Game Name** | Return the save slot name to use, for example one per map or per save file. Overrides **Save Game Name** in the Project Settings. |
+| **Get Save Game Name** | Return the save slot name to use, for example one per save file. Overrides **Save Game Name** and **Save File Per Level** in the Project Settings, so add the level name yourself if you want one file per level. |
 | **Save Foliage Data to Disk** | Replace how the data is saved. Return true on success. Also called when the manager ends play if there are unsaved changes. Check **Is Saving Synchronously** to finish the save before you return. |
 
 ![Override Get Save Game Name](../../../static/img/legacy/implement-1024x714.png)

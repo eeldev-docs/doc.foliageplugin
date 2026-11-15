@@ -16,15 +16,15 @@ Client: Input → Server RPC "Harvest"  →  Server: Line Trace → Apply Point 
 
 See [Multiplayer Harvesting](/docfiles/guides/multiplayer-harvesting) for the Blueprint.
 
-The [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface) events also run on the server.
+The same goes for **Interact With Foliage** and the other functions that change foliage, see [Blueprint Functions](/docfiles/reference/blueprint-functions). The [Foliage Plugin Interface](/docfiles/reference/foliage-plugin-interface) events also run on the server.
 
 ## What is replicated
 | What | How |
 |---|---|
-| Hidden and removed instances | Sent to every client when they change. |
+| Hidden and removed instances | Sent to every client when they change. Each client shows the stump and plays the regrowth on its own. |
 | Instances changed before a player joined | Sent to the player in chunks once their world has loaded. Changes made while the chunks are being sent follow right after, so the player ends up with the same state as the server. |
 | Players already connected when the manager spawns, or after seamless travel | Get the same initial sync as a player who just joined. |
-| Foliage Actors | Normal replicated Actors. Mesh, remaining uses and depletion are replicated. |
+| Foliage Actors | Normal replicated Actors. Mesh, remaining uses, depletion and whether the actor is in the [pool](/docfiles/reference/foliage-actor#actor-pooling) are replicated. |
 | Physics movement of depleted actors | Only when **Replicate Physics Movement** is on. See below. |
 
 The **Foliage Manager** that keeps track of the instances is spawned automatically on the server and is always relevant. You never place it in the level yourself. See [Custom Foliage Manager](/docfiles/guides/custom-foliage-manager) if you want to extend it.
@@ -36,6 +36,8 @@ The **Foliage Manager** that keeps track of the instances is spawned automatical
 | BPE On Foliage Remaining Uses Updated | ✓ | ✓ |
 | BPE On Foliage Mesh Updated | ✓ | ✓ |
 | BPE On Foliage Depleted | ✓ | ✓ |
+| BPE On Foliage Interacted | ✓ | |
+| BPE On Foliage Returned To Pool | ✓ | ✓ |
 | On Foliage Harvested / On Foliage Error Message | ✓ | |
 
 Play effects and sounds from the replicated events, and gameplay logic from the server-only ones. See [Effects and Sounds](/docfiles/guides/effects-and-sounds).

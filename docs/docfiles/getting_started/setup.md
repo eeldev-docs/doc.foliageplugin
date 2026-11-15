@@ -22,7 +22,7 @@ You can use one Foliage Actor for every resource, or create a separate one per r
 ## Step 3: Assign the Data Table in the Project Settings
 Open **Project Settings → Game → Foliage Plugin** and set **Foliage Data Table** to the Data Table you created in Step 1.
 
-![Foliage Plugin settings](../../../static/img/legacy/1-2-1024x546.jpg)
+![Foliage Plugin settings](../../../static/img/settings/plugin-settings.png)
 
 See [Plugin Settings](/docfiles/reference/plugin-settings) for every other setting.
 
@@ -32,7 +32,11 @@ Open the foliage type of every mesh you want to interact with, and set **Compone
 ![Set the Component Class to FoliagePluginComponent](../../../static/img/legacy/foliage.png)
 
 :::warning
-Instances that use the default component class are ignored by the plugin.
+Instances that use the default component class are ignored by the plugin, unless **Auto Convert Instanced Meshes** is on.
+:::
+
+:::tip Skip this step
+Set **Auto Convert Instanced Meshes** to **Painted Foliage Only** in the [Plugin Settings](/docfiles/reference/plugin-settings), and every foliage type whose mesh is in the Data Table is converted when the level loads. This is handy for existing levels and Marketplace foliage. See [Automatic conversion](/docfiles/guides/pcg-and-instanced-meshes#automatic-conversion).
 :::
 
 To harvest instances spawned by PCG or added to your own Actor, see [PCG and Instanced Static Meshes](/docfiles/guides/pcg-and-instanced-meshes).
@@ -50,8 +54,9 @@ Add a row to the Data Table for the tree:
 - Add the tree's static mesh to **Foliage Meshes**. It must be the **same mesh** as the one you paint, this is how the plugin knows which row a foliage instance belongs to.
 - Set **Foliage Actor Class** to the Foliage Actor from Step 2.
 - Add the rewards the player should get to **Rewards on Harvest**.
+- Optionally set a **Stump Mesh** and a **Regrow Duration**, see [Stumps and Regrowth](/docfiles/guides/stumps-and-regrowth).
 
-![Adding a Tree resource to the Data Table](../../../static/img/legacy/2-3-1024x513.jpg)
+![Adding a Tree resource to the Data Table](../../../static/img/settings/data-table-row.png)
 
 See [Data Table Settings](/docfiles/reference/data-table-settings) for every column.
 

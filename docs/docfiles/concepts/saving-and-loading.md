@@ -15,6 +15,7 @@ In **Project Settings → Game → Foliage Plugin → Saving and Loading**:
 | **Enable Persistent Data** | Off | Turns saving and loading on. |
 | **Auto Saving Rate** | `60` | Seconds between automatic saves. Minimum 5. |
 | **Save Game Name** | `FoliageData` | Name of the save slot. |
+| **Save File Per Level** | On | Adds the level name to the save slot, for example `FoliageData_Forest`, so every level has its own save file. |
 | **Save Game Version** | `1` | A save with a different version is not loaded and is overwritten on the next save. |
 
 ## When data is loaded and saved
@@ -36,9 +37,11 @@ In **Project Settings → Game → Foliage Plugin → Saving and Loading**:
 :::
 
 ## What is saved
-For every hidden or removed instance, the plugin saves which foliage component it belongs to, its instance index and its mesh, together with its original and hidden transform.
+For every hidden or removed instance, the plugin saves which foliage component it belongs to, its instance index and its mesh, together with its original and hidden transform and when it may respawn.
 
-The respawn timers are not saved. After loading, hidden instances respawn according to the normal [respawn rules](/docfiles/concepts/lifecycle#5-the-instance-respawns).
+The respawn time is saved as a real date and time. The **Respawn Delay** therefore also runs while the server is offline, and an instance whose delay has passed respawns on the first respawn check after loading. See the [respawn rules](/docfiles/concepts/lifecycle#6-the-instance-respawns).
+
+Stumps are shown again for every loaded hidden or removed instance. Foliage Actors that were in the middle of being harvested are not saved: after loading, their instances are hidden and respawn as usual.
 
 :::info Editing foliage after release
 When a component starts, the plugin finds every saved instance again by its mesh and original location. This means saved data still works when:
@@ -55,5 +58,12 @@ Instances that you moved in the editor cannot be found again. Increase **Save Ga
 Saves from 2.0 do not include the mesh. These entries are still found by component and instance index, and get the mesh the first time their component starts.
 :::
 
+## One save file per level
+With **Save File Per Level** on, which is the default, every level is saved to its own slot named **Save Game Name**, an underscore and the level name. Saving one level never overwrites another.
+
+If a level has no save file of its own yet, but a shared save named **Save Game Name** exists, for example from a version before this setting existed, the shared save is loaded once and written to the level's own slot on the next save.
+
+Turn **Save File Per Level** off to let all levels share one slot.
+
 ## Per-player or per-world save names
-All maps share the same save slot by default. To use a different slot, for example per map or per save file, override **Get Save Game Name** in a [Custom Foliage Manager](/docfiles/guides/custom-foliage-manager). You can also override **Save Foliage Data to Disk** to save the data your own way.
+To use a different slot, for example per save file or per player, override **Get Save Game Name** in a [Custom Foliage Manager](/docfiles/guides/custom-foliage-manager). Your name replaces the whole slot name, so add the level name yourself if you still want one file per level. You can also override **Save Foliage Data to Disk** to save the data your own way.

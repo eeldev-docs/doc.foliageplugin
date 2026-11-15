@@ -6,9 +6,9 @@ description: Implement the Foliage Plugin Interface, receive rewards and apply d
 # Harvesting Foliage
 
 ## Step 1: Implement the Foliage Plugin Interface
-When foliage is harvested, the plugin sends the rewards to the **Instigator** (the Controller passed to the damage node) and to the **Damage Causer**. Whichever of them implements the **Foliage Plugin Interface** receives the events.
+When foliage is harvested, the plugin sends the rewards to the first of these that implements the **Foliage Plugin Interface**: the **Instigator** (the Controller passed to the damage node), the Instigator's **Pawn**, or the **Damage Causer**.
 
-Open your Player Controller, or the Actor you pass as Damage Causer such as your Character, and add **Foliage Plugin Interface** under **Class Settings → Implemented Interfaces**.
+Open your Player Controller or your Character, and add **Foliage Plugin Interface** under **Class Settings → Implemented Interfaces**.
 
 ![Implement the Foliage Plugin Interface](../../../static/img/legacy/character1-1024x369.png)
 
@@ -41,6 +41,10 @@ The plugin handles the rest. The first hit replaces the instance with your Folia
 
 :::warning Damage must be applied on the server
 Damage applied on a client is ignored. In multiplayer, send a Server RPC from the client and apply the damage there. See [Multiplayer Harvesting](/docfiles/guides/multiplayer-harvesting).
+:::
+
+:::tip Harvesting without damage
+For berries, mushrooms and other things the player picks by hand, use **Interact With Foliage** instead of damage. See [Interaction and Pickups](/docfiles/guides/interaction-and-pickups).
 :::
 
 ## Next steps

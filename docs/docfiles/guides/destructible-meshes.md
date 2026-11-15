@@ -46,7 +46,20 @@ To add your own logic, create a Blueprint with **Foliage Plugin Geometry Collect
 The Geometry Collection Actor is destroyed together with the Foliage Actor.
 
 ## Field System Actor
-The Geometry Collection is broken by spawning a **Field System Actor** at the hit location. The default is the engine's `FS_MasterField`. You can choose another one with **Field System Actor** in the [Plugin Settings](/docfiles/reference/plugin-settings).
+The Geometry Collection is broken by spawning a **Field System Actor** at the hit location. It is spawned on the server and on every client. The default is **FoliagePluginFieldSystemActor**, which applies a strain at the hit location when it spawns:
+
+| Setting | Default | Description |
+|---|---|---|
+| **Field Radius** | `200` | Radius around the hit location that is affected. |
+| **Strain Magnitude** | `500000` | Strain that breaks the Geometry Collection. It must be higher than the **Damage Threshold** of the Geometry Collection. |
+| **Strain Cluster Levels** | `1` | Number of cluster levels the strain breaks. |
+| **Force Magnitude** | `0` | Force that pushes the broken pieces away from the hit location. 0 applies no force. |
+
+To change these values, create a Blueprint with **FoliagePluginFieldSystemActor** as the parent class and set it as **Field System Actor** in the [Plugin Settings](/docfiles/reference/plugin-settings). You can also use any other Field System Actor. If you use your own, set **Replicates** to off, because every machine already spawns its own.
+
+:::warning Upgrading from an older version
+Older versions used the engine's `FS_MasterField`, which is an editor asset and may be missing in packaged builds. If your **Field System Actor** setting still points to `FS_MasterField`, reset it to the default.
+:::
 
 To apply the damage in your own way, override **Handle Destructible Damage** in your Foliage Actor. See [Foliage Actor](/docfiles/reference/foliage-actor).
 
